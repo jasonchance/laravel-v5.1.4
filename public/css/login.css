@@ -1,0 +1,82 @@
+h4.modal-title {
+    text-align: center;
+    color: #478EC7;
+    font-size: 20px;
+    font-weight: 900;
+}
+.modal-header {
+    margin: 0 25px;
+    border-bottom: 1px solid #999;
+}
+.modal-body {
+    margin: 20px 10px 0 10px;
+}
+.remember {
+    font-size: 15px;
+    font-weight: 500;
+    color: #478EC7;
+    margin-left: 30px;
+}
+.forget {
+    font-size: 15px;
+    font-weight: 500;
+    color: #478EC7;
+    margin-right: 30px;
+    margin-top: 12px;
+}
+.modal-footer {
+    margin: 0 0px;
+    border-top: 1px solid #999;
+}
+.reset-modal-footer{
+    padding: 15px 0px 0px;
+    border-top: 1px solid #999;
+
+}
+.btn-reset{
+    width:100%;
+    font-weight: 900;
+    border-radius: 40px;
+}
+.reset-modal-footer .btn-reset:focus{
+    outline:none;
+}
+.modal-footer .btn-login {
+    font-weight: 900;
+    padding: 8px 42px;
+    border-radius: 40px;
+}
+.modal-footer .btn-login a{
+    color:inherit;
+}
+.modal-footer .btn-login:focus {
+    outline:none;
+}
+
+
+.modal-footer .btn-cancel {
+    font-weight: 900;
+    padding: 8px 42px;
+    background: #1DB4FF;
+    border-color:#1DB4ff;
+    border-radius: 40px;
+}
+.modal-footer .btn-cancel:focus{
+    outline:none;
+}
+.modal-footer .btn-cancel:hover {
+    color: #1DB4FF;
+    background: #FFFFFF;
+    border-radius: 40px;
+    border: solid 1px #1DB4FF;
+}
+.modal-warn {
+    color: #2BB5FC;
+}
+.modal-warn-back {
+    background: #2BB5FC;
+}
+.modal-body img {
+    height: 35px;
+    width:100%;
+}

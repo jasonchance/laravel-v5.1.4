@@ -1,0 +1,15 @@
+.announcement {
+    margin-top: 100px;
+}
+.announcement .panel-heading {
+    color: #0000BA;
+    font-weight: 900;
+    background: #1CA4E5;
+}
+.timeline-date {
+    margin: 10px -15px 0px 10px;
+    color: #0000BA;
+}
+.pager {
+    margin: 0 0 20px 0px;
+}
