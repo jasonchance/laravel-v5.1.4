@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         view()->share('userName', 'sundebiao');
+        
         // custom blade date 
         Blade::directive('datetime', function($expression) {
             return "<?php echo with{$expression}->format('m/d/Y H:i'); ?>";
