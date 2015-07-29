@@ -11,6 +11,38 @@
 |
 */
 
+Route::pattern('id', '[\d]+');
+
+Route::get('user/{id?}', ['middleware' => 'auth', 'uses' => 'UserController@index', 'as' => 'user']);
+
+Route::resource('user', 'UserController',
+                ['names' => ['create' => 'user.build']]);
+
+Route::get('foo', function() {
+	// $url = action('UserController@index');
+	// $url = route('user.build');
+	// return $url;
+	return response()->caps('foo1');
+	$content = ['hello', 11];
+	$status = 200;
+	$value = 'application/json';
+	$pathToFile = public_path().'/images/about-icon-1.png';
+	return response()->download($pathToFile);
+	return response($content, $status)
+			->header('Content-Type', $value)
+			->withCookie('name', 'value-value');;
+});
+
+Route::any('stripe/{age}', ['middleware' => 'old:200', function($age) {
+	return $age;
+}]);
+
+Route::any('posts/{post}/comments/{comment}', function($postId, $commentId) {
+	// $url = url('/');
+	$rs = $postId.'/'.$commentId;
+	return $rs;
+});
+
 Route::get('/', ['middleware' => 'auth', function () {
     return view('welcome');
 }]);
