@@ -13,6 +13,8 @@ use Illuminate\Http\Response;
 use Carbon\Carbon;
 
 use DB;
+use Auth;
+use Cache;
 
 class UserController extends Controller
 {
@@ -31,6 +33,49 @@ class UserController extends Controller
     public function index(Request $request, $id = null)
     {
         //
+
+        $collection = collect([1, 2, 3, 4, 5, 6, 7]);
+        $chunks = $collection->chunk(4);
+        $chunks->toArray();
+        dd($chunks);
+        $collection = collect(['taylor', 'abigail', null])->map(function ($name) {
+            return strtoupper($name);
+        })
+        ->reject(function ($name) {
+            return empty($name);
+        });
+        dd($collection);
+
+        if (Auth::check()) {
+            // $predis = new \Predis\Client();
+            // dd($predis);
+            $id = Auth::user()->id;
+            $key = 'user:'.$id;
+            $is = Cache::add($key, '1111', 2);
+            // Cache::pull('bar');
+            // $value = Cache::store('file')->get('bar');
+
+            // Cache::store('file')->put('bar', 'baz', 10);
+            dd($key, $is);
+            // $value = Cache::store('file')->get($key);
+            // dd($value);
+            $user = Cache::get('user:'.$id);
+            // dd($user);
+            if (!$user) {
+                $user = User::find($id);
+                Cache::put('user:'.$id, $user, 2);
+            }
+            dd($user);
+        }
+
+
+        // $user = User::find(2);
+        // dd($user);
+        // Auth::login($user);
+        $uid = Auth::user()->id;
+        Auth::loginUsingId($uid);
+
+        dd(111);
 
         // $pdo = DB::connection('laravel5')->getPdo();
         // dd($pdo);

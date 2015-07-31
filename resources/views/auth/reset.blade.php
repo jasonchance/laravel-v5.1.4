@@ -13,7 +13,7 @@
           <input type="hidden" name="token" value="{{ $token }}">
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" name="email" value="{{$email}}" class="form-control" id="exampleInputEmail1" placeholder="example@somewhere.com" >
+            <input type="email" name="email" value="{{ old('email') }}" class="form-control" id="exampleInputEmail1" placeholder="example@somewhere.com" >
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">New Password</label>

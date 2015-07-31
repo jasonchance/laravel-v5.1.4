@@ -13,7 +13,7 @@
           {!! csrf_field() !!}
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="example@somewhere.com">
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="example@somewhere.com" value="{{ old('email') }}">
           </div>
           <div class="row reset-modal-footer">
             <div class="col-md-12">
