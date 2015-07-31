@@ -13,10 +13,14 @@
 
 Route::pattern('id', '[\d]+');
 
+Route::get('users', function() {
+	return App\User::all();
+});
+
 Route::get('user/{id?}', ['middleware' => 'auth', 'uses' => 'UserController@index', 'as' => 'user']);
 
-Route::resource('user', 'UserController',
-                ['names' => ['create' => 'user.build']]);
+// Route::resource('user', 'UserController',
+//                 ['names' => ['create' => 'user.build']]);
 
 Route::get('foo', function() {
 	// $url = action('UserController@index');

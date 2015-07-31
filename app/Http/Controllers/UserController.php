@@ -10,6 +10,9 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Input;
 use Illuminate\Http\Response;
+use Carbon\Carbon;
+
+use DB;
 
 class UserController extends Controller
 {
@@ -28,6 +31,44 @@ class UserController extends Controller
     public function index(Request $request, $id = null)
     {
         //
+
+        // $pdo = DB::connection('laravel5')->getPdo();
+        // dd($pdo);
+
+        $user = User::all()->lists('name');
+        dd( (string)$user );
+        $users = User::all();
+        dd($users->toJson());
+        // $disabled_at = $user->disabled_at->getTimeStamp();
+        // if ($user->status) {
+        //     dd($disabled_at);       
+        // }
+        // dd($disabled_at);
+
+        $user->disabled_at = Carbon::now();
+        $rs = $user->save();
+        dd($rs);
+
+        // $users = User::where('id', '>', 0)->get();
+        
+        // $users = $users->count();
+        $names = [];
+        User::chunk(2, function($users) {
+            foreach ($users as $key => $user) {
+                $names[] = $user->name;
+            }
+            dd($names);
+        });
+        dd($users);
+
+        $names = $users->reject(function($user) {
+            return $user->status === 1;
+        })
+        ->map(function($user) {
+            return $user->name;
+        });
+        dd($names);
+
         if ($request->is('user/*')) {
             $url = $request->url();
             $value = $request->cookie('name');
