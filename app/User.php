@@ -52,4 +52,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return false;
     }
 
+    /**
+     * scope
+     */
+    public function scopePopular($query, $id)
+    {
+        return $query->where('id', '=', $id)->select(['name']);
+    }
+
 }

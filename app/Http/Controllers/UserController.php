@@ -15,6 +15,7 @@ use Carbon\Carbon;
 use DB;
 use Auth;
 use Cache;
+use Log;
 
 class UserController extends Controller
 {
@@ -33,6 +34,24 @@ class UserController extends Controller
     public function index(Request $request, $id = null)
     {
         //
+
+        $monolog = Log::getMonolog();
+        dd($monolog);
+
+        Log::info('Showing user profile for user: '.$id);
+        $users = User::get();
+        Log::info('User failed to login.', ['id' => $users[0]->id]);
+        dd($users);
+
+        echo $a = memory_get_usage(), PHP_EOL;
+        // $users = User::get(); // usage 7744, return collection
+        $users = DB::table('users')->get(); // usage 6568, return array
+        echo $b = memory_get_usage(), PHP_EOL;
+        echo $b - $a, PHP_EOL;
+        dd($users);
+        foreach ($users as $user) {
+            dd($user);
+        }
 
         $collection = collect([1, 2, 3, 4, 5, 6, 7]);
         $chunks = $collection->chunk(4);
