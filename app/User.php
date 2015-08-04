@@ -60,4 +60,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $query->where('id', '=', $id)->select(['name']);
     }
 
+    public function work()
+    {
+        return 1;
+    }
+
 }

@@ -35,8 +35,42 @@ class UserController extends Controller
     {
         //
 
-        $monolog = Log::getMonolog();
-        dd($monolog);
+        echo $path = storage_path('app/file.txt');exit;
+        echo $path = app_path('Http/Controllers/Controller.php');exit;
+        $e = e('<html>foo</html>');
+        echo $e;exit;
+        echo $string = str_random(4);exit;
+        echo $title = str_slug("Laravel 5 Framework", "-");exit;
+        echo $value = studly_case('foo_bar');exit; // Ê××ÖÄ¸´óÐ´
+        echo trans('passwords.password');exit;
+        echo $value = trans_choice('validation.required', 11);exit;
+
+        echo secure_asset('foo/bar.zip', $title = '111', $attributes = []);exit;
+
+        $pwd = bcrypt(123123);
+        dd($pwd);
+
+        $debug = config('app.debug');
+        dd($debug);
+
+        // $user = factory('App\User')->make();
+        // dd($user);
+
+        return view('welcome');
+        // return redirect('/');
+
+        $value = value(function() { return 'bar'; });
+        dd($value);
+
+        $headers = [];
+        // return response('Hello World', 200, $headers);
+        return response()->json(['foo' => 'bar'], 200, $headers);
+
+        $value = with(new User)->work();
+        dd($value);
+
+        // $monolog = Log::getMonolog();
+        // dd($monolog);
 
         Log::info('Showing user profile for user: '.$id);
         $users = User::get();

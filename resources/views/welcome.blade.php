@@ -10,6 +10,10 @@
     <div class="title">=========</div>
 	@datetime($nowTime)
     <div class="quote">{{ Inspiring::quote() }}</div>
+    <form method="POST">
+    {!! method_field('delete') !!}
+    {!! csrf_field() !!}
+	</form>
   </div>
 </div>
 @stop
