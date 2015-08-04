@@ -52,6 +52,13 @@ class UserController extends Controller
         foreach ($users as $user) {
             dd($user);
         }
+        // $user = User::find(1)->value('name');
+        $users = User::select('email', 'name')->get();
+        foreach ($users as $user) {
+            var_dump($user->name);
+            echo PHP_EOL;
+        }
+        dd($users);
 
         $collection = collect([1, 2, 3, 4, 5, 6, 7]);
         $chunks = $collection->chunk(4);
