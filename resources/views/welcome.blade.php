@@ -10,10 +10,16 @@
     <div class="title">=========</div>
 	@datetime($nowTime)
     <div class="quote">{{ Inspiring::quote() }}</div>
-    <form method="POST">
+
+    {!! Form::open(['route' => 'user', 'method' => 'post']) !!}
+        {!! Form::input('text', 'name') !!}
+        {!! Form::textarea('content') !!}
+    {!! Form::close() !!}
+
+    <!-- <form method="POST">
     {!! method_field('delete') !!}
     {!! csrf_field() !!}
-	</form>
+	</form> -->
   </div>
 </div>
 @stop

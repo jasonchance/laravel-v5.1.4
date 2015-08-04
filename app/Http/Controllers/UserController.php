@@ -16,6 +16,8 @@ use DB;
 use Auth;
 use Cache;
 use Log;
+// use Illuminate\Support\Facades\Redis as Redis;
+use RedisN;
 
 class UserController extends Controller
 {
@@ -24,6 +26,20 @@ class UserController extends Controller
     {
         // $this->middleware('auth');
 
+    }
+
+    public static function showProfile($id)
+    {
+        $key = 'user:'.$id;
+        $user = Cache::get($key);
+        if (!$user) {
+            $user = User::find($id);
+            // $user = DB::table('users')->find($id);
+            Cache::put($key, $user, 2);
+        }
+        // Redis::set('user:'.$id, $user);
+        // $user = RedisN::get('user:'.$id);
+        return $user;
     }
 
     /**
@@ -35,6 +51,9 @@ class UserController extends Controller
     {
         //
 
+        $users = User::orderBy(DB::raw('rand()'))->get();
+        dd($users);
+  
         echo $path = storage_path('app/file.txt');exit;
         echo $path = app_path('Http/Controllers/Controller.php');exit;
         $e = e('<html>foo</html>');

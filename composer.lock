@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d28b6d488c3aa183f2f62c93ca75238a",
+    "hash": "70ae391578d2dbbb9730aa7c4d2a0e0d",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -830,20 +830,20 @@
         },
         {
             "name": "predis/predis",
-            "version": "dev-master",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "6bc1a38123f61efde92d8b4a73adabf168e09442"
+                "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/6bc1a38123f61efde92d8b4a73adabf168e09442",
-                "reference": "6bc1a38123f61efde92d8b4a73adabf168e09442",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/84060b9034d756b4d79641667d7f9efe1aeb8e04",
+                "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.3.2"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -853,11 +853,6 @@
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Predis\\": "src/"
@@ -881,7 +876,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2015-07-30 18:51:15"
+            "time": "2015-07-30 18:34:15"
         },
         {
             "name": "psr/log",
@@ -3093,7 +3088,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "predis/predis": 20,
         "zizaco/entrust": 20
     },
     "prefer-stable": false,
