@@ -28,6 +28,12 @@ class UserController extends Controller
 
     }
 
+    public function foo()
+    {
+        // test
+        return view('index');
+    }
+
     public static function showProfile($id)
     {
         $key = 'user:'.$id;
@@ -60,7 +66,7 @@ class UserController extends Controller
         echo $e;exit;
         echo $string = str_random(4);exit;
         echo $title = str_slug("Laravel 5 Framework", "-");exit;
-        echo $value = studly_case('foo_bar');exit; // Ê××ÖÄ¸´óĞ´
+        echo $value = studly_case('foo_bar');exit; // é¦–å­—æ¯å¤§å†™
         echo trans('passwords.password');exit;
         echo $value = trans_choice('validation.required', 11);exit;
 

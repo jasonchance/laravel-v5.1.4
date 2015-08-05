@@ -1,1 +1,15 @@
 /* Write your styles */
+.am-box {
+	border: 1px solid #333;
+	/*width: 300px;*/
+	height: 200px;
+}
+.am-box-hd {
+	margin: 0;
+	padding: 5px 10px;
+	border-bottom: 1px solid #333;
+	background-color: #CCC;
+}
+.am-box-bg {
+	margin: 10px;
+}

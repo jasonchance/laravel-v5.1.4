@@ -17,6 +17,8 @@ Route::get('users', function() {
 	return App\User::all();
 });
 
+Route::get('user/foo', 'UserController@foo');
+
 Route::get('profile/{id}', 'UserController@showProfile');
 
 Route::get('user/{id?}', ['middleware' => 'auth', 'uses' => 'UserController@index', 'as' => 'user']);
