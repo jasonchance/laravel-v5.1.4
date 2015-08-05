@@ -1,9 +1,9 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "laravel test",
+    "description": "Laravel 5.1 test.",
+    "keywords": ["cms", "laravel", "5.1"],
     "license": "MIT",
-    "type": "project",
+    "type": "test",
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
