@@ -19,6 +19,11 @@ use Log;
 // use Illuminate\Support\Facades\Redis as Redis;
 use RedisN;
 
+use App\Role;
+use App\Permission;
+
+use Entrust;
+
 class UserController extends Controller
 {
 
@@ -30,6 +35,40 @@ class UserController extends Controller
 
     public function foo()
     {
+        //
+        // tese role permission
+        // https://github.com/sunbiao0526/entrust
+        // dd(Auth::user());
+        $role = Role::findOrFail(4);
+        // $user = User::findOrFail(1);
+        // $role->delete();
+        // dd($role->users);
+        // $role->users()->sync([]); // Delete relationship data
+        // $role->perms()->sync([]); // Delete relationship data
+
+        // dd($user->ability('admin,owner', 'create-post,edit-user', ['validate_all' => false, 'return_type' => 'both']));
+        // dd($user->ability(array('admin', 'owner'), array('create-post', 'edit-user')));
+        // dd(Auth::user()->hasRole(['owner', 'admin']));
+        // dd(Entrust::hasRole('admin'));
+        // dd($user->hasRole(['owner', 'admin'], true));
+        // dd($user->can('create-post'));
+        // $role = Role::findOrFail(1);
+        // $permission = Permission::findOrFail(1);
+        // $perms = Permission::select('id')->get();
+        // $user->attachRole($role);
+        // $user->roles()->attach($role->id);
+        // $role->perms()->sync($perms);
+        // add roles
+        // $role = new Role();
+        // $role->name = 'employee';
+        // $role->display_name = 'Widget Co. Employee';
+        // $role->save();
+        // add permissions
+        // $permission = new Permission();
+        // $permission->name = 'mailing-list-subscribe';
+        // $permission->display_name = 'Subscribe to mailing list';
+        // $permission->save();
+        return response('ok', 200);
         // test
         return view('index');
     }

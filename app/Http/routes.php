@@ -17,6 +17,9 @@ Route::get('users', function() {
 	return App\User::all();
 });
 
+// Entrust::routeNeedsRole('user/foo*', 'admin', Redirect::to('403'));
+// Entrust::routeNeedsPermission('user/foo', 'create-post', false);
+
 Route::get('user/foo', 'UserController@foo');
 
 Route::get('profile/{id}', 'UserController@showProfile');
@@ -57,7 +60,8 @@ Route::any('posts/{post}/comments/{comment}', function($postId, $commentId) {
 });
 
 Route::get('/', ['middleware' => 'auth', function () {
-    return view('welcome');
+    // return view('welcome');
+    return view('donate');
 }]);
 
 Route::get('/home', ['middleware' => 'auth', function () {

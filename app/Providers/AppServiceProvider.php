@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
         DB::listen(function($sql, $bindings, $time) {
             //
             // dd($sql, $bindings, $time);
-            echo 'sql: ', $sql, "\n";
+            // echo 'sql: ', $sql, "\n";
         });
     }
 
