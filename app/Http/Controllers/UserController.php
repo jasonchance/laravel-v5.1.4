@@ -24,22 +24,35 @@ use App\Permission;
 
 use Entrust;
 
+use App\Traits\HelloTrait;
+
 class UserController extends Controller
 {
-
+    use HelloTrait;
+    
     public function __construct()
     {
         // $this->middleware('auth');
 
     }
 
+    public function a()
+    {
+        return 'aaa';
+    }
+
     public function foo()
     {
         //
+        $pwd = crypt('123123', env('APP_KEY'));
+        dd($pwd);
+        // trait 继承顺序, self>trait>parent
+        $a = $this->a();
+        dd($a);
         // tese role permission
         // https://github.com/sunbiao0526/entrust
         // dd(Auth::user());
-        $role = Role::findOrFail(4);
+        // $role = Role::findOrFail(4);
         // $user = User::findOrFail(1);
         // $role->delete();
         // dd($role->users);
@@ -68,7 +81,7 @@ class UserController extends Controller
         // $permission->name = 'mailing-list-subscribe';
         // $permission->display_name = 'Subscribe to mailing list';
         // $permission->save();
-        return response('ok', 200);
+        // return response('ok', 200);
         // test
         return view('index');
     }

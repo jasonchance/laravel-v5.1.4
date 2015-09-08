@@ -13,3 +13,53 @@
 .am-box-bg {
 	margin: 10px;
 }
+.boxes {
+	width: 300px;
+}
+.boxes .box {
+	height: 100px;
+	color: #eee;
+	line-height: 100px;
+	text-align: center;
+	font-weight: bold;
+	transition: all .2s ease;
+}
+.boxes .box:hover {
+	font-size: 250%;
+	transform: rotate(360deg);
+}
+.box-1 {
+  background-color: red;
+}
+
+.box-2 {
+  background-color: orange;
+}
+
+.box-3 {
+  background-color: #0000ff;
+}
+
+.box-4 {
+  background-color: #008000;
+}
+
+.box-5 {
+  background-color: red;
+}
+
+.box-6 {
+  background-color: orange;
+}
+
+.box-7 {
+  background-color: #0000ff;
+}
+
+.box-8 {
+  background-color: #008000;
+}
+
+.box-9 {
+  background-color: red;
+}

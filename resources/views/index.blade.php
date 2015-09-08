@@ -46,6 +46,17 @@
 </div>
 
 <div class="am-g am-g-fixed">
+  <ul class="am-avg-sm-3 boxes">
+    <li class="box box-1">1</li>
+    <li class="box box-2">2</li>
+    <li class="box box-3">3</li>
+    <li class="box box-4">4</li>
+    <li class="box box-5">5</li>
+    <li class="box box-6">6</li>
+    <li class="box box-7">7</li>
+    <li class="box box-8">8</li>
+    <li class="box box-9">9</li>
+  </ul>
   <div class="am-u-sm-4">
     <div class="am-box">
        <h2 class="am-box-hd">About the Site</h2>
@@ -64,6 +75,8 @@
 
 
 <div class="am-container">
+
+
 
   <article class="am-comment">
     <a href="#link-to-user-home">
