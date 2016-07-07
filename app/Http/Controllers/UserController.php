@@ -18,13 +18,11 @@ use Cache;
 use Log;
 // use Illuminate\Support\Facades\Redis as Redis;
 use RedisN;
-
 use App\Role;
 use App\Permission;
-
 use Entrust;
-
 use App\Traits\HelloTrait;
+use Toastr;
 
 class UserController extends Controller
 {
@@ -33,7 +31,12 @@ class UserController extends Controller
     public function __construct()
     {
         // $this->middleware('auth');
+    }
 
+    public function toastr(Request $request)
+    {
+        Toastr::info('Hello','Toastr');
+        return view('toastr');
     }
 
     public function a()

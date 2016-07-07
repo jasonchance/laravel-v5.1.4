@@ -146,9 +146,11 @@ return [
         App\Providers\ResponseMacroServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
 
-        Illuminate\Html\HtmlServiceProvider::class,
+        // Illuminate\Html\HtmlServiceProvider::class,
 
         Zizaco\Entrust\EntrustServiceProvider::class,
+
+        Meow\Toastr\ToastrServiceProvider::class,
 
     ],
 
@@ -198,10 +200,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
-        'Form'      => Illuminate\Html\FormFacade::class,
-        'Html'      => Illuminate\Html\HtmlFacade::class,
+        // 'Form'      => Illuminate\Html\FormFacade::class,
+        // 'Html'      => Illuminate\Html\HtmlFacade::class,
 
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+
+        'Toastr'    => Meow\Toastr\Facades\Toastr::class,
 
     ],
 
